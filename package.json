@@ -43,7 +43,7 @@
     "md": "make-dir .md/fonts && run-s md.common md.all md.fonts.material-symbols md.fonts.roboto md.theme",
     "generate": "stencil generate",
     "convert-sample": "node src/assets/convert-sample.mjs -i ./src/assets/static-config-sample.jsonc -o ./src/assets/static-config.json",
-    "precompress": "precompress -t gz -e **.gz,**.br,**.map, **.woff2 dist/md-shell",
+    "precompress": "precompress -t gz -e **.gz,**.br,**.map,**.woff2 dist/md-shell",
     "build.docker": "docker build -t polyfea/md-shell -f build/docker/Dockerfile ."
   },
   "dependencies": {
