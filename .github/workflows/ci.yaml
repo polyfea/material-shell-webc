@@ -1,12 +1,9 @@
-
-
 name: Build and Publish Package
 
 on: 
     push:
         branches: 
           - "main"
-          - "milung/stabilize-ci"
     pull_request:
         branches: [ "main" ]
     release:
