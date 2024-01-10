@@ -1,0 +1,24 @@
+api: polyfea.github.io/v1alpha1
+kind: WebComponent
+metadata:
+  name: home-fea
+spec:
+  microfrontend: polyfea-md-shell
+  element: polyfea-md-app
+  attributes: 
+    - name: headline
+      value: Home page
+    - name: short-headline
+      value: Home
+    - name: supporting-text
+      value: Go to landing page of the Polyfea Shell Application.
+    - name: material-icon
+      value: home
+    - name: href
+      value: ./
+  priority: 100 # show as the first in the navigation
+  displayRules:
+    - anyOf:
+      - context-name: rail-content
+      - context-name: drawer-content
+      - context-name: navigation-content 

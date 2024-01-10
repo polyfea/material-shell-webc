@@ -1,0 +1,7 @@
+node_modules/
+.md/
+.stencil/
+.vscode/
+dist/
+loader/
+www/

@@ -1,0 +1,25 @@
+api: polyfea.github.io/v1alpha1
+kind: WebComponent
+metadata:
+  name: polyfea-md-shell
+spec:
+  microfrontend: polyfea-md-shell
+  element: polyfea-md-shell
+  attributes: 
+    - name: application-headline
+      # change to your application name
+      value: Polyfea Shell Application
+  displayRules:
+    - anyOf:
+      - context-name: shell
+
+# The polyfea-md-shell adds context areas: 
+# * drawer-content -Navigation drawer icons.
+# * main-content -The main content area of the page.
+# * navigation-content -The navigation bar icons.
+# * rail-content- The navigation rail icons.
+# * rail-primary-action - The primary action of the rail
+# * topbar-leading-icon - The leading icon of the top bar.
+# * topbar-menu-items - The top bar's menu items.
+# * topbar-trailing-icon - The trailing icon area of the top bar.
+

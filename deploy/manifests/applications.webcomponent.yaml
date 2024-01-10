@@ -1,0 +1,17 @@
+api: polyfea.github.io/v1alpha1
+kind: WebComponent
+metadata:
+  name: applications
+spec:
+  microfrontend: polyfea-md-shell
+  element: polyfea-md-apps
+  attributes: 
+    - name: applications-context
+      value: applications
+  displayRules:
+    - anyOf:
+      - context-name: main-content
+      - path: "^(\\.?/)?$" # root path
+
+# The polyfea-md-shell adds context areas:
+# * applications - named in attributes; use to show application tiles.

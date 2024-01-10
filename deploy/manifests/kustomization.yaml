@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- applications.webcomponent.yaml
+- deployment.yaml
+- home-fea.webcomponent.yaml
+- logout-fea.webcomponent.yaml
+- material.microfrontend.yaml
+- md-shell.microfrontend.yaml
+- md-shell.webcomponent.yaml
+- service.yaml
+- webcomponent.yaml
+
+commonLabels:
+  polyfea.github.io/feature-set: polyfea-md-shell

@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: &POD polyfea-md-shell
+spec:  
+  selector:
+    pod: *POD
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: http

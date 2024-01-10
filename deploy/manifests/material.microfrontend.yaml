@@ -1,0 +1,22 @@
+api: polyfea.github.io/v1alpha1
+kind: MicroFrontend
+metadata:
+  name: material-design
+spec:
+  frontendClass: default
+  service:
+    name: polyfea-md-shell
+    port: http
+  modulePath: md/material-all.mjs # md/material-common.mjs
+  staticPaths:
+    # fonts
+    - kind: stylesheet
+      href: md/fonts/material-symbols/style.css
+    - kind: stylesheet
+      href: md/fonts/roboto/style.css
+    # color scheme
+    - kind: stylesheet
+      href: md/theme/tokens.css
+    # dark/light theme mapping and :root setup 
+    - kind: stylesheet
+      href: md/theme/theme.css

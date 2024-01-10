@@ -1,0 +1,21 @@
+api: polyfea.github.io/v1alpha1
+kind: WebComponent
+metadata:
+  name: logout-fea
+spec:
+  microfrontend: polyfea-md-shell
+  element: polyfea-md-app
+  attributes: 
+    - name: headline
+      value: Logout
+    - name: supporting-text
+      value: Logout from the system
+    - name: material-icon
+      value: logout
+    - name: href
+      value: ./logout
+  priority: -100 # show as the last in the navigation
+  displayRules:
+    - anyOf:
+      - context-name: rail-content
+      - context-name: drawer-content

@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: &POD polyfe-md-shell
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+        pod: *POD
+  template:
+    metadata:
+      labels: 
+        pod: *POD
+    spec:
+      containers:
+      - name: polyfea-md-shell
+        image: ghcr.io/polyfea/md-shell:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: http
+          containerPort: 7100
+        resources:
+            requests:
+                memory: "16MB"
+                cpu: "0.01"
+            limits:
+                memory: "320M"
+                cpu: "0.2"
