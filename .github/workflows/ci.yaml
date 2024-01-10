@@ -1,10 +1,9 @@
-
-
 name: Build and Publish Package
 
 on: 
     push:
-        branches: [ "main"]
+        branches: 
+          - "main"
     pull_request:
         branches: [ "main" ]
     release:
@@ -70,10 +69,19 @@ jobs:
               type=ref,event=branch
               type=ref,event=branch,suffix={{date '.YYYYMMDD.HHmm'}}
               type=ref,event=tag
+              type=ref,event=pr
               type=semver,pattern={{version}}
               type=semver,pattern={{major}}.{{minor}}
               type=semver,pattern={{major}}     
               type=raw,value=latest,enable={{is_default_branch}}
+          labels: |
+              maintainer=Polyfea-Owners
+              org.opencontainers.image.title=polyfea/md-shell
+              org.opencontainers.image.description=Polyfea Application Shell
+              org.opencontainers.image.vendor=Polyfea Team
+              org.opencontainers.image.source=${{github.repositoryUrl}}
+              org.opencontainers.image.revision=${{github.run_id}}
+              org.opencontainers.image.documentation=https://github.com/polyfea/md-shell/blob/main/readme.md
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
