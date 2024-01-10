@@ -2,6 +2,8 @@
   "name": "@polyfea/md-shell",
   "version": "0.0.1",
   "description": "Polyfea Material Shell Web Component",
+  "homepage": "https://github.com/polyfea/md-shell/blob/main/README.md",
+  "author": "Polyfea contributors",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.js",
@@ -12,11 +14,19 @@
   "unpkg": "dist/md-shell/md-shell.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "https://github.com/polyfea/md-shell.git"
   },
   "files": [
     "dist/",
     "loader/"
+  ],
+  "keywords": [
+    "polyfea",
+    "webcomponents",
+    "custom-elements",
+    "microfrontend",
+    "material-design",
+    "app-shell"
   ],
   "scripts": {
     "build.stencil": "stencil build --docs",
@@ -59,5 +69,5 @@
     "rollup": "^4.9.1",
     "vite": "^5.0.11"
   },
-  "license": "MIT"
+  "license": "Apache-2.0"
 }

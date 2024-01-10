@@ -10,6 +10,7 @@ describe('polyfea-md-navigation-bar', () => {
     expect(page.root).toEqualHtml(`
       <polyfea-md-navigation-bar>
         <mock:shadow-root>
+          <md-elevation></md-elevation> 
           <slot></slot>
         </mock:shadow-root>
       </polyfea-md-navigation-bar>

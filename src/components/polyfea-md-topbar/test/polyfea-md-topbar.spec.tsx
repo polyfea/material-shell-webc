@@ -70,7 +70,7 @@ describe('polyfea-md-topbar', () => {
 
       expect(element.shadowRoot.querySelector("slot[name='leading']")).toEqualHtml(`
     <slot name="leading">
-    <md-icon-button>
+    <md-icon-button class="drawer-button">
       <md-icon>
         menu
       </md-icon>
@@ -89,7 +89,7 @@ describe('polyfea-md-topbar', () => {
 
       expect(element.shadowRoot.querySelector("slot[name='leading']")).toEqualHtml(`
     <slot name="leading">
-    <md-icon-button>
+    <md-icon-button class="back-button">
       <md-icon>
         back
       </md-icon>
