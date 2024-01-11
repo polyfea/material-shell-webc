@@ -1,12 +1,9 @@
-api: polyfea.github.io/v1alpha1
+apiVersion: polyfea.github.io/v1alpha1
 kind: MicroFrontend
 metadata:
   name: polyfea-md-shell
 spec:
-  frontendClass: default
-  service:
-    name: polyfea-md-shell
-    port: http
+  service: http://polyfea-md-shell.default.svc.cluster.local
   modulePath: md-shell.esm.js
   dependsOn:
     - material-design
