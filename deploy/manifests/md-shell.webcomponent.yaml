@@ -1,9 +1,9 @@
-api: polyfea.github.io/v1alpha1
+apiVersion: polyfea.github.io/v1alpha1
 kind: WebComponent
 metadata:
   name: polyfea-md-shell
 spec:
-  microfrontend: polyfea-md-shell
+  microFrontend: polyfea-md-shell
   element: polyfea-md-shell
   attributes: 
     - name: application-headline
