@@ -5,7 +5,6 @@ resources:
 - applications.webcomponent.yaml
 - deployment.yaml
 - home-fea.webcomponent.yaml
-- logout-fea.webcomponent.yaml
 - material.microfrontend.yaml
 - md-shell.microfrontend.yaml
 - md-shell.webcomponent.yaml

@@ -1,0 +1,47 @@
+apiVersion: polyfea.github.io/v1alpha1
+kind: WebComponent
+metadata:
+  name: saturn-fea-link
+spec:
+  microFrontend: polyfea-md-shell
+  element: polyfea-md-app
+  attributes: 
+    - name: headline
+      value: Voyager 1 Saturn
+    - name: short-headline
+      value: Saturn
+    - name: supporting-text
+      value: |
+        Saturn and two of its moons, 
+        Tethys (above) and Dione, were photographed 
+        by Voyager 1 from 13 million kilometers (8 million miles).
+        Credit: NASA/JPL
+    - name: material-icon
+      value: public_off
+    - name: href
+      value: ./saturn
+    - name: tile-img-src
+      value: https://live.staticflickr.com/5506/30737246655_1da181f436_o.jpg
+  priority: 20 
+  displayRules:
+    - anyOf:
+      - context-name: applications
+      - context-name: rail-content
+      - context-name: drawer-content
+---
+apiVersion: polyfea.github.io/v1alpha1
+kind: WebComponent
+metadata:
+  name: saturn-fea-content
+spec:
+  microFrontend: polyfea-md-shell
+  element: img
+  attributes: 
+    - name: src
+      value: https://live.staticflickr.com/5506/30737246655_1da181f436_o.jpg
+    - name: alt
+      value: Voyager 1 Saturn
+  displayRules:
+    - allOf:
+      - context-name: main-content
+      - path: "^(\\.?/)?saturn(/.*)?$"

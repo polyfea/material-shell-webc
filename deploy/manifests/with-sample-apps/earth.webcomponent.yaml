@@ -1,0 +1,45 @@
+apiVersion: polyfea.github.io/v1alpha1
+kind: WebComponent
+metadata:
+  name: earth-fea-link
+spec:
+  microFrontend: polyfea-md-shell
+  element: polyfea-md-app
+  attributes: 
+    - name: headline
+      value: Blue Marble 2012
+    - name: short-headline
+      value: Marble
+    - name: supporting-text
+      value: |
+        A 'Blue Marble' image of the Earth taken from the VIIRS instrument 
+        aboard NASA's Earth-observing satellite - Suomi NPP. Credit: NASA/NOAA/GSFC/Suomi NPP/VIIRS/Norman Kuring
+    - name: material-icon
+      value: public
+    - name: href
+      value: ./blue-marble
+    - name: tile-img-src
+      value: https://live.staticflickr.com/695/31258502484_ebc602077a_w.jpg
+  priority: 10
+  displayRules:
+    - anyOf:
+      - context-name: applications
+      - context-name: rail-content
+      - context-name: drawer-content
+---
+apiVersion: polyfea.github.io/v1alpha1
+kind: WebComponent
+metadata:
+  name: earth-fea-content
+spec:
+  microFrontend: polyfea-md-shell
+  element: img
+  attributes: 
+    - name: src
+      value: https://live.staticflickr.com/695/31258502484_683c3d1344_6k.jpg
+    - name: alt
+      value: Blue Marble 2012
+  displayRules:
+    - allOf:
+      - context-name: main-content
+      - path: "^(\\.?/)?blue-marble(/.*)?$"
