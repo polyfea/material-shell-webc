@@ -29,7 +29,8 @@ export const config: Config = {
       copy: [
         { src: './assets/static-config.json', dest: 'polyfea/static-config' },
         { src: '../.md/', dest: 'md/' , warn: true },
-        { src: './assets/theme/', dest: 'md/theme' , warn: true }
+        { src: './assets/theme/', dest: 'md/theme' , warn: true },
+        { src: '../node_modules/@polyfea/core/dist/boot.mjs', dest: 'polyfea.mjs' , warn: true }
       ]
     }
   ],

@@ -35,22 +35,22 @@
     "start.stencil": "stencil build --dev --watch --serve --port 20080",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "md.common": "vite build --config vite.mdcommon.config.ts",
-    "md.all": "vite build --config vite.mdall.config.ts",
+    "md.common": "vite build --config vite.mdcommon.config.mts",
+    "md.all": "vite build --config vite.mdall.config.mts",
     "md.fonts.material-symbols": "copy-google-fonts -d .md/fonts/material-symbols -s \"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,0;24,400,0,0;24,700,0,0;48,100,0,0;48,400,0,0;48,700,0,0&display=swap\"",
     "md.fonts.roboto": "copy-google-fonts -d .md/fonts/roboto -s \"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap\"",
     "md.theme": "copyfiles -f src/assets/theme/* .md/theme/",
     "md": "make-dir .md/fonts && run-s md.common md.all md.fonts.material-symbols md.fonts.roboto md.theme",
     "generate": "stencil generate",
     "convert-sample": "node src/assets/convert-sample.mjs -i ./src/assets/static-config-sample.jsonc -o ./src/assets/static-config.json",
-    "precompress": "precompress -t gz -e **.gz,**.br,**.map,**.woff2 dist/md-shell",
+    "precompress": "precompress -t gz,br -e **.gz,**.br,**.map,**.woff2 dist/md-shell",
     "build.docker": "docker build -t polyfea/md-shell -f build/docker/Dockerfile ."
   },
   "dependencies": {
     "@material/web": "^1.1.1",
     "@polyfea/browser-api": "^1.0.1",
-    "@polyfea/core": "^1.0.1",
-    "@stencil/core": "^4.7.0",
+    "@polyfea/core": "^1.1.1",
+    "@stencil/core": "^4.9.0",
     "rxjs": "^7.8.1"
   },
   "devDependencies": {

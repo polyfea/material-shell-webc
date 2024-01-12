@@ -3,6 +3,7 @@ kind: MicroFrontend
 metadata:
   name: polyfea-md-shell
 spec:
+  frontendClass: null
   service: http://polyfea-md-shell.default.svc.cluster.local
   modulePath: md-shell.esm.js
   dependsOn:

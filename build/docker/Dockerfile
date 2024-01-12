@@ -1,15 +1,4 @@
-# build busybox with httpd only
-FROM alpine:3.13.2 AS busybox-builder
 
-RUN apk add gcc musl-dev make perl
-RUN wget https://busybox.net/downloads/busybox-1.35.0.tar.bz2 \
-  && tar xf busybox-1.35.0.tar.bz2 \
-  && mv /busybox-1.35.0 /busybox
-
-WORKDIR /busybox
-COPY build/docker/busybox.config ./.config
-RUN make && make install
-RUN adduser -D static
 
 # build md-shell
 FROM node:21 AS fea-build
@@ -25,22 +14,21 @@ RUN npm run build
 RUN npm run precompress
 RUN find . -type f -name '*.map' -delete
 
-
-
 # create minimalistic httpd image
-FROM scratch
+FROM ghcr.io/polyfea/spa-base as md-shell
 
-EXPOSE 3000
+EXPOSE 7105
 
+COPY --from=fea-build /workspace/dist/md-shell/ /spa/public/
 
-COPY --from=busybox-builder /etc/passwd /etc/passwd
-COPY --from=busybox-builder /busybox/_install/bin/busybox /
+ENV OTEL_SERVICE_NAME=polyfea-md-shell
+ENV SPA_BASE_FALLBACK_DISABLED=true
+ENV SPA_BASE_JSON_LOGGING=true
 
-USER static
-WORKDIR /home/static
-COPY build/docker/httpd.conf .
-
-COPY --from=fea-build /workspace/dist/md-shell .
-
-# Run busybox httpd
-CMD ["/busybox", "httpd", "-f", "-v", "-p", "7100", "-c", "httpd.conf"]
+LABEL org.opencontainers.image.authors="Polyfea Contributors"
+LABEL org.opencontainers.image.url="https://github.com/polyfea/md-shell/blob/main/readme.md"
+LABEL org.opencontainers.image.source="https://github.com/polyfea/md-shell.git"
+LABEL org.opencontainers.image.vendor="Polyfea Team"
+LABEL org.opencontainers.image.licence="Apache-2.0"
+LABEL org.opencontainers.image.title="Polyfea Material Design Shell"
+LABEL org.opencontainers.image.description="Material Design application shell for Polyfea ecosystem"

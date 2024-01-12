@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: &POD polyfe-md-shell
+  name: &POD polyfea-md-shell
 spec:
   replicas: 1
   selector:
@@ -13,12 +13,12 @@ spec:
         pod: *POD
     spec:
       containers:
-      - name: polyfea-md-shell
-        image: ghcr.io/polyfea/md-shell:latest
+      - name: *POD
+        image: ghcr.io/polyfea/md-shell:milung-rebase-img
         imagePullPolicy: IfNotPresent
         ports:
-        - name: http
-          containerPort: 7100
+          - name: http
+            containerPort: 7105
         resources:
             requests:
                 memory: "16M"
