@@ -9,7 +9,7 @@ spec:
     - name: applications-context
       value: applications
   displayRules:
-    - anyOf:
+    - allOf:
       - context-name: main-content
       - path: "^(\\.?/)?$" # root path
 

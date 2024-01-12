@@ -25,7 +25,7 @@
       "dependsOn": [
         "material-design"
       ],
-      "module": "dist/md-shell/md-shell.esm.js"
+      "module": "dist/md-shell.esm.js"
     },
     "my-fea": {
       "dependsOn": [

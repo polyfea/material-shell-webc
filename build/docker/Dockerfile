@@ -12,7 +12,7 @@ COPY . .
 
 RUN npm run build
 RUN npm run precompress
-RUN find . -type f -name '*.map' -delete
+# RUN find . -type f -name '*.map' -delete
 
 # create minimalistic httpd image
 FROM ghcr.io/polyfea/spa-base as md-shell

@@ -10,7 +10,6 @@ resources:
 - md-shell.microfrontend.yaml
 - md-shell.webcomponent.yaml
 - service.yaml
-- webcomponent.yaml
 
 commonLabels:
   polyfea.github.io/feature-set: polyfea-md-shell

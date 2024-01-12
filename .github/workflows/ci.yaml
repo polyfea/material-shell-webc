@@ -4,6 +4,7 @@ on:
     push:
         branches: 
           - "main"
+          - "milung/rebase-img"
     pull_request:
         branches: [ "main" ]
     release:

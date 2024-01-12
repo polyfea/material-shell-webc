@@ -29,7 +29,7 @@
     "app-shell"
   ],
   "scripts": {
-    "build.stencil": "stencil build --docs",
+    "build.stencil": "stencil build --docs --dev",
     "build": "run-s md build.stencil",
     "start": "run-s convert-sample md start.stencil",
     "start.stencil": "stencil build --dev --watch --serve --port 20080",
