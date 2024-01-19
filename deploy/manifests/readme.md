@@ -6,19 +6,13 @@ The base folder contains the fundamental configuration for deploying the Polyfea
 resources:
 - https://github.com/polyfea/md-shell//deploy/manifests/base?version=v1.0.1
 
-
-replacements:
-- source:
-    group: polyfea.github.io
-    kind: MicrofrontendClass
-    name: your_class
-    fieldPath: metadata.name
-  targets:
-  - select:
-      group: polyfea.github.io
-      kind: Microfrontend
-    fieldPaths:
-    - spec.frontendClass
+patches:
+- patch: |-
+    - op: replace
+      path: /spec/frontendClass
+      value: wac-hospital
+  target:
+     kind: MicroFrontend
 ```
 
 ## Sample Applications
