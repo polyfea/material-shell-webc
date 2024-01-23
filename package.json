@@ -49,7 +49,7 @@
   "dependencies": {
     "@material/web": "^1.1.1",
     "@polyfea/browser-api": "^1.0.1",
-    "@polyfea/core": "^1.1.1",
+    "@polyfea/core": "^1.1.2",
     "@stencil/core": "^4.9.0",
     "rxjs": "^7.8.1"
   },
