@@ -1,0 +1,27 @@
+apiVersion: polyfea.github.io/v1alpha1
+kind: MicroFrontendClass
+metadata:
+  name: fea
+  labels:
+    app.kubernetes.io/name: microfrontendclass
+    app.kubernetes.io/instance: microfrontendclass-sample
+    app.kubernetes.io/part-of: polyfea-controller
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: polyfea-controller
+spec:
+  title: "Polyfea Microfrontend MD Shell"
+  baseUri: "/fea"
+  progressiveWebApp:
+    webAppManifest:
+      name: "Polyfea MD Shell"
+      start_url: "/fea"
+      display: "standalone"
+      icons:
+        - src: "/fea/assets/icons/icon-72x72.png"
+          sizes: "72x72"
+          type: "image/png"
+  cspHeader: >-
+    default-src 'self'; font-src 'self'; script-src 'strict-dynamic'
+    'nonce-{NONCE_VALUE}'; worker-src 'self'; manifest-src 'self'; style-src
+    'self' 'strict-dynamic' 'nonce-{NONCE_VALUE}'; style-src-attr 'self'
+    'unsafe-inline'; img-src *;

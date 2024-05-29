@@ -3,7 +3,7 @@ kind: MicroFrontend
 metadata:
   name: material-design
 spec:
-  frontendClass: null
+  frontendClass: fea
   service: http://polyfea-md-shell.default.svc.cluster.local
   modulePath: md/material-all.mjs # md/material-common.mjs
   staticPaths:
