@@ -191,6 +191,11 @@ a.card-wrapper {
   
 }
 
+.app-icon {
+  max-width: 2rem;
+  max-height: 2rem;
+}
+
 
 :host([context="navigation-content"]) {
   width: 3.5rem;

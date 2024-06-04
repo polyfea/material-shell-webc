@@ -122,7 +122,7 @@ export class PolyfeaMdApp {
         <md-ripple></md-ripple>
         <slot name="icon">
         {this.iconSrc
-          ? <img src={this.iconSrc} alt="" />
+          ? <img src={this.iconSrc} class="app-icon" alt="" />
           : this.materialIcon
             ? <md-icon>{this.materialIcon}</md-icon>
             : undefined
@@ -139,7 +139,7 @@ export class PolyfeaMdApp {
       <div class="icon">
         <slot name="icon">
         {this.iconSrc
-          ? <img src={this.iconSrc} alt="" />
+          ? <img src={this.iconSrc} class="app-icon" alt="" />
           : this.materialIcon
             ? <md-icon>{this.materialIcon}</md-icon>
             : undefined
