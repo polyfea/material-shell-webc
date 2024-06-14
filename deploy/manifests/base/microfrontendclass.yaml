@@ -11,6 +11,9 @@ metadata:
 spec:
   title: "Polyfea Microfrontend MD Shell"
   baseUri: "/fea"
+  extraMetaTags:
+  - name: viewport
+    content: width=device-width, initial-scale=1
   progressiveWebApp:
     webAppManifest:
       name: "Polyfea MD Shell"

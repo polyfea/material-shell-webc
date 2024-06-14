@@ -48,7 +48,7 @@ describe('polyfea-md-app', () => {
     const headline = page.root.shadowRoot.querySelector(".headline");
 
     expect(page.root.shadowRoot.querySelector("a.drawer-button[href='./home']")).toBeDefined();
-    expect(icon).toEqualHtml('<div class="icon"><slot name="icon"><img alt="" src="./img/home.png"></slot></div>');
+    expect(icon).toEqualHtml('<div class="icon"><slot name="icon"><img alt="" class="app-icon" src="./img/home.png"></slot></div>');
     expect(headline).toEqualHtml('<div class="headline">Tets headline</div>');
   });
 
@@ -141,7 +141,7 @@ describe('polyfea-md-app', () => {
     const headline = page.root.shadowRoot.querySelector(".headline");
 
     expect(page.root.shadowRoot.querySelector("a.navigation-button[href='./home']")).toBeDefined();
-    expect(icon).toEqualHtml('<div class="icon"><md-ripple></md-ripple><slot name="icon"><img alt="" src="./img/home.png"></slot></div>');
+    expect(icon).toEqualHtml('<div class="icon"><md-ripple></md-ripple><slot name="icon"><img alt="" class="app-icon" src="./img/home.png"></slot></div>');
     expect(headline).toEqualHtml('<div class="headline">Short</div>');
   });
 
