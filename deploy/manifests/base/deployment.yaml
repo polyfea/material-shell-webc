@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: *POD
-        image: ghcr.io/polyfea/md-shell:milung-rebase-img
+        image: ghcr.io/polyfea/md-shell:latest
         imagePullPolicy: IfNotPresent
         ports:
           - name: http
